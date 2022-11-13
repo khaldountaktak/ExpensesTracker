@@ -15,6 +15,12 @@ const ExpenseForm = (props) => {
   };
   const SubmitHandler = (event) => {
     event.preventDefault();
+    if (!Title || !Amount  || !Datee){
+      UserTitle("");
+      UserAmount("");
+      UserDate("");
+      return;
+    }
     const expenseData = {
       title: Title,
       amount: +Amount,
